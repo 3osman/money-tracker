@@ -49,6 +49,10 @@ int attr dividerPadding 0x7f010056
 int attr dividerVertical 0x7f01001a
 int attr dropDownListViewStyle 0x7f010021
 int attr dropdownListPreferredItemHeight 0x7f010048
+int attr exampleColor 0x7f010070
+int attr exampleDimension 0x7f01006f
+int attr exampleDrawable 0x7f010071
+int attr exampleString 0x7f01006e
 int attr expandActivityOverflowButtonDrawable 0x7f01006b
 int attr height 0x7f010026
 int attr homeAsUpIndicator 0x7f010013
@@ -323,7 +327,8 @@ int layout abc_search_view 0x7f030016
 int layout abc_simple_decor 0x7f030017
 int layout activity_add_entry 0x7f030018
 int layout activity_main 0x7f030019
-int layout support_simple_spinner_dropdown_item 0x7f03001a
+int layout sample_category 0x7f03001a
+int layout support_simple_spinner_dropdown_item 0x7f03001b
 int menu add_entry 0x7f0c0000
 int menu main 0x7f0c0001
 int string abc_action_bar_home_description 0x7f0a0001
@@ -526,6 +531,11 @@ int styleable ActionMode_titleTextStyle 1
 int[] styleable ActivityChooserView { 0x7f01006a, 0x7f01006b }
 int styleable ActivityChooserView_expandActivityOverflowButtonDrawable 1
 int styleable ActivityChooserView_initialActivityCount 0
+int[] styleable Category { 0x7f01006e, 0x7f01006f, 0x7f010070, 0x7f010071 }
+int styleable Category_exampleColor 2
+int styleable Category_exampleDimension 1
+int styleable Category_exampleDrawable 3
+int styleable Category_exampleString 0
 int[] styleable CompatTextView { 0x7f01006d }
 int styleable CompatTextView_textAllCaps 0
 int[] styleable LinearLayoutICS { 0x7f01002e, 0x7f010055, 0x7f010056 }
