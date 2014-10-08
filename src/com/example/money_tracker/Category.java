@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
+import android.os.DropBoxManager;
 import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.view.View;
@@ -14,18 +15,19 @@ import android.view.View;
  * TODO: document your custom view class.
  */
 public class Category extends View {
-	private String mExampleString; // TODO: use a default from R.string...
-	private int mExampleColor = Color.RED; // TODO: use a default from
-											// R.color...
-	private float mExampleDimension = 0; // TODO: use a default from R.dimen...
-	private Drawable mExampleDrawable;
-
-	private TextPaint mTextPaint;
+	private String categoryName;
+	private int categoryColor;
+	private float iconDimension = 0; // TODO: use a default from R.dimen...
+	private Drawable drawable;
+	
 	private float mTextWidth;
 	private float mTextHeight;
-
+	
+	private TextPaint mTextPaint;
+	
 	public Category(Context context) {
 		super(context);
+		iconDimension = 70f;
 		init(null, 0);
 	}
 
@@ -44,19 +46,19 @@ public class Category extends View {
 		final TypedArray a = getContext().obtainStyledAttributes(attrs,
 				R.styleable.Category, defStyle, 0);
 
-		mExampleString = a.getString(R.styleable.Category_exampleString);
-		mExampleColor = a.getColor(R.styleable.Category_exampleColor,
-				mExampleColor);
+		categoryName = a.getString(R.styleable.Category_exampleString);
+		categoryColor = a.getColor(R.styleable.Category_exampleColor,
+				categoryColor);
 		// Use getDimensionPixelSize or getDimensionPixelOffset when dealing
 		// with
 		// values that should fall on pixel boundaries.
-		mExampleDimension = a.getDimension(
-				R.styleable.Category_exampleDimension, mExampleDimension);
+		iconDimension = a.getDimension(
+				R.styleable.Category_exampleDimension, iconDimension);
 
 		if (a.hasValue(R.styleable.Category_exampleDrawable)) {
-			mExampleDrawable = a
+			drawable = a
 					.getDrawable(R.styleable.Category_exampleDrawable);
-			mExampleDrawable.setCallback(this);
+			drawable.setCallback(this);
 		}
 
 		a.recycle();
@@ -71,9 +73,9 @@ public class Category extends View {
 	}
 
 	private void invalidateTextPaintAndMeasurements() {
-		mTextPaint.setTextSize(mExampleDimension);
-		mTextPaint.setColor(mExampleColor);
-		mTextWidth = mTextPaint.measureText(mExampleString);
+		mTextPaint.setTextSize(iconDimension);
+		mTextPaint.setColor(categoryColor);
+		mTextWidth = mTextPaint.measureText(categoryName);
 
 		Paint.FontMetrics fontMetrics = mTextPaint.getFontMetrics();
 		mTextHeight = fontMetrics.bottom;
@@ -94,15 +96,15 @@ public class Category extends View {
 		int contentHeight = getHeight() - paddingTop - paddingBottom;
 
 		// Draw the text.
-		canvas.drawText(mExampleString, paddingLeft
+		canvas.drawText(categoryName, paddingLeft
 				+ (contentWidth - mTextWidth) / 2, paddingTop
 				+ (contentHeight + mTextHeight) / 2, mTextPaint);
 
 		// Draw the example drawable on top of the text.
-		if (mExampleDrawable != null) {
-			mExampleDrawable.setBounds(paddingLeft, paddingTop, paddingLeft
+		if (drawable != null) {
+			drawable.setBounds(paddingLeft, paddingTop, paddingLeft
 					+ contentWidth, paddingTop + contentHeight);
-			mExampleDrawable.draw(canvas);
+			drawable.draw(canvas);
 		}
 	}
 
@@ -112,7 +114,7 @@ public class Category extends View {
 	 * @return The example string attribute value.
 	 */
 	public String getExampleString() {
-		return mExampleString;
+		return categoryName;
 	}
 
 	/**
@@ -123,7 +125,7 @@ public class Category extends View {
 	 *            The example string attribute value to use.
 	 */
 	public void setExampleString(String exampleString) {
-		mExampleString = exampleString;
+		categoryName = exampleString;
 		invalidateTextPaintAndMeasurements();
 	}
 
@@ -133,7 +135,7 @@ public class Category extends View {
 	 * @return The example color attribute value.
 	 */
 	public int getExampleColor() {
-		return mExampleColor;
+		return categoryColor;
 	}
 
 	/**
@@ -144,7 +146,7 @@ public class Category extends View {
 	 *            The example color attribute value to use.
 	 */
 	public void setExampleColor(int exampleColor) {
-		mExampleColor = exampleColor;
+		categoryColor = exampleColor;
 		invalidateTextPaintAndMeasurements();
 	}
 
@@ -154,7 +156,7 @@ public class Category extends View {
 	 * @return The example dimension attribute value.
 	 */
 	public float getExampleDimension() {
-		return mExampleDimension;
+		return iconDimension;
 	}
 
 	/**
@@ -165,7 +167,7 @@ public class Category extends View {
 	 *            The example dimension attribute value to use.
 	 */
 	public void setExampleDimension(float exampleDimension) {
-		mExampleDimension = exampleDimension;
+		iconDimension = exampleDimension;
 		invalidateTextPaintAndMeasurements();
 	}
 
@@ -175,7 +177,7 @@ public class Category extends View {
 	 * @return The example drawable attribute value.
 	 */
 	public Drawable getExampleDrawable() {
-		return mExampleDrawable;
+		return drawable;
 	}
 
 	/**
@@ -186,6 +188,6 @@ public class Category extends View {
 	 *            The example drawable attribute value to use.
 	 */
 	public void setExampleDrawable(Drawable exampleDrawable) {
-		mExampleDrawable = exampleDrawable;
+		drawable = exampleDrawable;
 	}
 }

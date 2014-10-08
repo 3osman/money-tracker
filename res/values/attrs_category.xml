@@ -1,10 +1,10 @@
 <resources>
 
     <declare-styleable name="Category">
-        <attr name="exampleString" format="string" />
-        <attr name="exampleDimension" format="dimension" />
-        <attr name="exampleColor" format="color" />
-        <attr name="exampleDrawable" format="color|reference" />
+        <attr name="categoryName" format="string" />
+        <attr name="iconDimension" format="dimension" />
+        <attr name="categoryColor" format="color" />
+        <attr name="drawable" format="color|reference" />
     </declare-styleable>
 
 </resources>
