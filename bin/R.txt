@@ -40,6 +40,8 @@ int attr backgroundSplit 0x7f010031
 int attr backgroundStacked 0x7f010030
 int attr buttonBarButtonStyle 0x7f010018
 int attr buttonBarStyle 0x7f010017
+int attr categoryColor 0x7f010070
+int attr categoryName 0x7f01006e
 int attr customNavigationLayout 0x7f010032
 int attr disableChildrenWhenDisabled 0x7f010054
 int attr displayOptions 0x7f010028
@@ -47,17 +49,15 @@ int attr divider 0x7f01002e
 int attr dividerHorizontal 0x7f01001b
 int attr dividerPadding 0x7f010056
 int attr dividerVertical 0x7f01001a
+int attr drawable 0x7f010071
 int attr dropDownListViewStyle 0x7f010021
 int attr dropdownListPreferredItemHeight 0x7f010048
-int attr exampleColor 0x7f010070
-int attr exampleDimension 0x7f01006f
-int attr exampleDrawable 0x7f010071
-int attr exampleString 0x7f01006e
 int attr expandActivityOverflowButtonDrawable 0x7f01006b
 int attr height 0x7f010026
 int attr homeAsUpIndicator 0x7f010013
 int attr homeLayout 0x7f010033
 int attr icon 0x7f01002c
+int attr iconDimension 0x7f01006f
 int attr iconifiedByDefault 0x7f01005a
 int attr indeterminateProgressStyle 0x7f010035
 int attr initialActivityCount 0x7f01006a
@@ -533,10 +533,10 @@ int[] styleable ActivityChooserView { 0x7f01006a, 0x7f01006b }
 int styleable ActivityChooserView_expandActivityOverflowButtonDrawable 1
 int styleable ActivityChooserView_initialActivityCount 0
 int[] styleable Category { 0x7f01006e, 0x7f01006f, 0x7f010070, 0x7f010071 }
-int styleable Category_exampleColor 2
-int styleable Category_exampleDimension 1
-int styleable Category_exampleDrawable 3
-int styleable Category_exampleString 0
+int styleable Category_categoryColor 2
+int styleable Category_categoryName 0
+int styleable Category_drawable 3
+int styleable Category_iconDimension 1
 int[] styleable CompatTextView { 0x7f01006d }
 int styleable CompatTextView_textAllCaps 0
 int[] styleable LinearLayoutICS { 0x7f01002e, 0x7f010055, 0x7f010056 }

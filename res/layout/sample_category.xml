@@ -9,9 +9,9 @@
         android:background="#ccc"
         android:paddingBottom="40dp"
         android:paddingLeft="20dp"
-        app:exampleColor="#33b5e5"
-        app:exampleDimension="24sp"
-        app:exampleDrawable="@android:drawable/ic_menu_add"
-        app:exampleString="Hello, Category" />
+        app:categoryName="category1"
+        app:iconDimension="24sp"
+        app:categoryColor="#33b5e5"
+        app:drawable="@android:drawable/ic_menu_add"/>
 
 </FrameLayout>

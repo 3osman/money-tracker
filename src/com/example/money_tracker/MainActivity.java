@@ -1,6 +1,7 @@
 package com.example.money_tracker;
 
 import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
@@ -16,12 +17,9 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-//        View test = findViewById(R.id.redCategory);
-        Category test2 = (Category) findViewById(R.id.redCategory);
-//        test.setBackgroundColor(Color.RED);
+        Category test = (Category) findViewById(R.id.redCategory);
+        test.setBackgroundColor(Color.RED);
         
-//        LinearLayout layout = new LinearLayout(getApplicationContext());
-//        layout.addView(test);
     }
 
 

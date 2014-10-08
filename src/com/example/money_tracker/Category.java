@@ -1,6 +1,7 @@
 package com.example.money_tracker;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -9,6 +10,8 @@ import android.graphics.drawable.Drawable;
 import android.os.DropBoxManager;
 import android.text.TextPaint;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 
 /**
@@ -17,7 +20,7 @@ import android.view.View;
 public class Category extends View {
 	private String categoryName;
 	private int categoryColor;
-	private float iconDimension = 0; // TODO: use a default from R.dimen...
+	private float iconDimension; // TODO: use a default from R.dimen...
 	private Drawable drawable;
 	
 	private float mTextWidth;
@@ -46,18 +49,18 @@ public class Category extends View {
 		final TypedArray a = getContext().obtainStyledAttributes(attrs,
 				R.styleable.Category, defStyle, 0);
 
-		categoryName = a.getString(R.styleable.Category_exampleString);
-		categoryColor = a.getColor(R.styleable.Category_exampleColor,
+		categoryName = a.getString(R.styleable.Category_categoryName);
+		categoryColor = a.getColor(R.styleable.Category_categoryColor,
 				categoryColor);
 		// Use getDimensionPixelSize or getDimensionPixelOffset when dealing
 		// with
 		// values that should fall on pixel boundaries.
 		iconDimension = a.getDimension(
-				R.styleable.Category_exampleDimension, iconDimension);
+				R.styleable.Category_iconDimension, iconDimension);
 
-		if (a.hasValue(R.styleable.Category_exampleDrawable)) {
+		if (a.hasValue(R.styleable.Category_drawable)) {
 			drawable = a
-					.getDrawable(R.styleable.Category_exampleDrawable);
+					.getDrawable(R.styleable.Category_drawable);
 			drawable.setCallback(this);
 		}
 
@@ -189,5 +192,14 @@ public class Category extends View {
 	 */
 	public void setExampleDrawable(Drawable exampleDrawable) {
 		drawable = exampleDrawable;
+	}
+	
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		Log.v("Category", "Touch event");
+		Context context = getContext();
+		Intent intent = new Intent(context, AddEntryActivity.class);
+    	context.startActivity(intent);
+	    return super.onTouchEvent(event);
 	}
 }
