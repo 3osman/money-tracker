@@ -1,14 +1,22 @@
 package com.example.money_tracker;
 
+import com.money_tracker.dao.CategoryDao;
+import com.money_tracker.dao.EntryDao;
+
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 public class AddEntryActivity extends ActionBarActivity {
-
+	private CategoryDao datasource;
+	private EntryDao entrysource;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		datasource = new CategoryDao(this);
+		datasource.open();
+		entrysource = new EntryDao(this);
+		entrysource.open();
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_entry);
 	}
@@ -31,4 +39,16 @@ public class AddEntryActivity extends ActionBarActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	@Override
+	protected void onResume() {
+		datasource.open();
+		super.onResume();
+	}
+
+	@Override
+	protected void onPause() {
+		datasource.close();
+		super.onPause();
+	}
+
 }

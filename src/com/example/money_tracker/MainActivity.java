@@ -1,5 +1,8 @@
 package com.example.money_tracker;
 
+import com.money_tracker.dao.CategoryDao;
+import com.money_tracker.dao.EntryDao;
+
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.graphics.Color;
@@ -11,12 +14,17 @@ import android.widget.LinearLayout;
 
 
 public class MainActivity extends ActionBarActivity {
-
+	private CategoryDao datasource;
+	private EntryDao entrysource;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+    	datasource = new CategoryDao(this);
+		datasource.open();
+		entrysource = new EntryDao(this);
+		entrysource.open();
+
         Category test = (Category) findViewById(R.id.redCategory);
         test.setBackgroundColor(Color.RED);
         
@@ -41,4 +49,16 @@ public class MainActivity extends ActionBarActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+    @Override
+	protected void onResume() {
+		datasource.open();
+		super.onResume();
+	}
+
+	@Override
+	protected void onPause() {
+		datasource.close();
+		super.onPause();
+	}
+
 }
