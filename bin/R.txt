@@ -250,10 +250,27 @@ int id action_context_bar 0x7f05001d
 int id action_menu_divider 0x7f050016
 int id action_menu_presenter 0x7f050017
 int id action_mode_close_button 0x7f050024
+<<<<<<< HEAD
 int id action_settings 0x7f05003d
+=======
+int id action_settings 0x7f050050
+>>>>>>> 29c68a876b13104864362d45bb7e16f0ac49e035
 int id activity_chooser_view_content 0x7f050025
 int id always 0x7f05000b
 int id beginning 0x7f050011
+int id btnAddId 0x7f05004b
+int id btnClearId 0x7f050048
+int id btnDoteId 0x7f050049
+int id btnNum0Id 0x7f050047
+int id btnNum1Id 0x7f050043
+int id btnNum2Id 0x7f050044
+int id btnNum3Id 0x7f050045
+int id btnNum4Id 0x7f050040
+int id btnNum5Id 0x7f050041
+int id btnNum6Id 0x7f050042
+int id btnNum7Id 0x7f05003d
+int id btnNum8Id 0x7f05003e
+int id btnNum9Id 0x7f05003f
 int id checkbox 0x7f05002d
 int id collapseActionView 0x7f05000d
 int id default_activity_button 0x7f050028
@@ -278,7 +295,14 @@ int id normal 0x7f050000
 int id progress_circular 0x7f050018
 int id progress_horizontal 0x7f050019
 int id radio 0x7f05002f
+<<<<<<< HEAD
 int id redCategory 0x7f05003c
+=======
+int id redCategory 0x7f05004d
+int id redCategory01 0x7f05004e
+int id redCategory02 0x7f05004f
+int id row01 0x7f05004c
+>>>>>>> 29c68a876b13104864362d45bb7e16f0ac49e035
 int id search_badge 0x7f050032
 int id search_bar 0x7f050031
 int id search_button 0x7f050033
@@ -296,8 +320,11 @@ int id showTitle 0x7f050006
 int id split_action_bar 0x7f05001e
 int id submit_area 0x7f050039
 int id tabMode 0x7f050002
+int id tableId 0x7f05003c
+int id tableRow1 0x7f050046
 int id title 0x7f05002b
 int id top_action_bar 0x7f050020
+int id txtResultId 0x7f05004a
 int id up 0x7f050021
 int id useLogo 0x7f050003
 int id withText 0x7f05000c
@@ -348,9 +375,25 @@ int string abc_shareactionprovider_share_with 0x7f0a000c
 int string abc_shareactionprovider_share_with_application 0x7f0a000b
 int string action_settings 0x7f0a000f
 int string app_name 0x7f0a000d
+<<<<<<< HEAD
 int string delete 0x7f0a0013
 int string hello 0x7f0a0012
+=======
+int string clear 0x7f0a001b
+int string dote 0x7f0a001d
+>>>>>>> 29c68a876b13104864362d45bb7e16f0ac49e035
 int string hello_world 0x7f0a000e
+int string numEight 0x7f0a0012
+int string numFive 0x7f0a0015
+int string numFour 0x7f0a0014
+int string numNine 0x7f0a0013
+int string numOne 0x7f0a0017
+int string numSeven 0x7f0a0011
+int string numSix 0x7f0a0016
+int string numThree 0x7f0a0019
+int string numTwo 0x7f0a0018
+int string numZero 0x7f0a001a
+int string plus 0x7f0a001c
 int string title_activity_add_entry 0x7f0a0010
 int string title_activity_test_database 0x7f0a0011
 int style AppBaseTheme 0x7f0b008b

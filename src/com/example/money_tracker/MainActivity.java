@@ -12,7 +12,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 
-
 public class MainActivity extends ActionBarActivity {
 	private CategoryDao datasource;
 	private EntryDao entrysource;
@@ -24,19 +23,38 @@ public class MainActivity extends ActionBarActivity {
 		datasource.open();
 		entrysource = new EntryDao(this);
 		entrysource.open();
-
-        Category test = (Category) findViewById(R.id.redCategory);
-        test.setBackgroundColor(Color.RED);
+		Category test = (Category) findViewById(R.id.redCategory);
+		Category test1 = (Category) findViewById(R.id.redCategory01);
+		Category test2 = (Category) findViewById(R.id.redCategory02);
+		/*Category test3 = (Category) findViewById(R.id.redCategory03);
+		Category test4 = (Category) findViewById(R.id.redCategory04);
+		Category test5 = (Category) findViewById(R.id.redCategory05);
+		Category test6 = (Category) findViewById(R.id.redCategory06);
+		Category test7 = (Category) findViewById(R.id.redCategory07);
+		Category test8 = (Category) findViewById(R.id.redCategory08);*/ 
+		
+		test.setBackgroundColor(Color.RED);
+		test1.setBackgroundColor(Color.GREEN);
+		test2.setBackgroundColor(Color.BLUE);
+		/*test3.setBackgroundColor(Color.WHITE);
+		test4.setBackgroundColor(Color.YELLOW);
+		test5.setBackgroundColor(Color.GREEN);
+		test6.setBackgroundColor(Color.RED);
+		test7.setBackgroundColor(Color.BLUE);
+		test8.setBackgroundColor(Color.BLACK);*/ 
+        
         
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
+	
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -60,5 +78,6 @@ public class MainActivity extends ActionBarActivity {
 		datasource.close();
 		super.onPause();
 	}
+
 
 }
