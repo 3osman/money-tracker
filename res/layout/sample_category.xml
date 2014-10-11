@@ -4,8 +4,7 @@
     android:layout_height="match_parent" >
 
     <com.example.money_tracker.Category
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+       
         android:background="#ccc"
         android:paddingBottom="40dp"
         android:paddingLeft="20dp"
