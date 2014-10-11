@@ -2,6 +2,7 @@ package com.example.money_tracker;
 
 import com.money_tracker.dao.CategoryDao;
 import com.money_tracker.dao.EntryDao;
+import com.money_tracker.entities.Entry;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -94,8 +95,10 @@ public class AddEntryActivity extends ActionBarActivity {
 
 			// Operator buttons: '+', '-', '*', '/' and '='
 			case R.id.btnAddId:
-				compute();
+				boolean added = compute(
+						Double.parseDouble(txtResult.getText().toString()), 1);
 				lastOperator = '+';
+
 				break;
 			// Clear button
 			case R.id.btnClearId:
@@ -111,15 +114,13 @@ public class AddEntryActivity extends ActionBarActivity {
 		// Perform computation on the previous result and the current input
 		// number,
 		// based on the previous operator.
-		private void compute() {
-			int inNum = Integer.parseInt(inStr);
-			inStr = "0";
-			if (lastOperator == ' ') {
-				result = inNum;
-			} else if (lastOperator == '+') {
-				result += inNum;
-			}
-			txtResult.setText(String.valueOf(result));
+		private boolean compute(double amount, int category_id) {
+
+			// save the new comment to the database
+			Entry entry = entrysource.createEntry(amount, category_id);
+
+			return (entry != null);
+
 		}
 	}
 
@@ -139,6 +140,7 @@ public class AddEntryActivity extends ActionBarActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+
 	@Override
 	protected void onResume() {
 		datasource.open();

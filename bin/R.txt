@@ -250,11 +250,7 @@ int id action_context_bar 0x7f05001d
 int id action_menu_divider 0x7f050016
 int id action_menu_presenter 0x7f050017
 int id action_mode_close_button 0x7f050024
-<<<<<<< HEAD
-int id action_settings 0x7f05003d
-=======
 int id action_settings 0x7f050050
->>>>>>> 29c68a876b13104864362d45bb7e16f0ac49e035
 int id activity_chooser_view_content 0x7f050025
 int id always 0x7f05000b
 int id beginning 0x7f050011
@@ -295,14 +291,10 @@ int id normal 0x7f050000
 int id progress_circular 0x7f050018
 int id progress_horizontal 0x7f050019
 int id radio 0x7f05002f
-<<<<<<< HEAD
-int id redCategory 0x7f05003c
-=======
 int id redCategory 0x7f05004d
 int id redCategory01 0x7f05004e
 int id redCategory02 0x7f05004f
 int id row01 0x7f05004c
->>>>>>> 29c68a876b13104864362d45bb7e16f0ac49e035
 int id search_badge 0x7f050032
 int id search_bar 0x7f050031
 int id search_button 0x7f050033
@@ -375,13 +367,8 @@ int string abc_shareactionprovider_share_with 0x7f0a000c
 int string abc_shareactionprovider_share_with_application 0x7f0a000b
 int string action_settings 0x7f0a000f
 int string app_name 0x7f0a000d
-<<<<<<< HEAD
-int string delete 0x7f0a0013
-int string hello 0x7f0a0012
-=======
 int string clear 0x7f0a001b
 int string dote 0x7f0a001d
->>>>>>> 29c68a876b13104864362d45bb7e16f0ac49e035
 int string hello_world 0x7f0a000e
 int string numEight 0x7f0a0012
 int string numFive 0x7f0a0015
@@ -395,7 +382,6 @@ int string numTwo 0x7f0a0018
 int string numZero 0x7f0a001a
 int string plus 0x7f0a001c
 int string title_activity_add_entry 0x7f0a0010
-int string title_activity_test_database 0x7f0a0011
 int style AppBaseTheme 0x7f0b008b
 int style AppTheme 0x7f0b008c
 int style TextAppearance_AppCompat_Base_CompactMenu_Dialog 0x7f0b0063

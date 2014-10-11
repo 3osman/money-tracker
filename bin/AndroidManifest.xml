@@ -26,10 +26,7 @@
             android:name=".AddEntryActivity"
             android:label="@string/title_activity_add_entry" >
         </activity>
-        <activity
-            android:name=".TestDatabaseActivity"
-            android:label="@string/title_activity_test_database" >
-        </activity>
+       
     </application>
 
 </manifest>
