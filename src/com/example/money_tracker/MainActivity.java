@@ -23,9 +23,9 @@ public class MainActivity extends ActionBarActivity {
 		datasource.open();
 		entrysource = new EntryDao(this);
 		entrysource.open();
-		Category test = (Category) findViewById(R.id.redCategory);
-		Category test1 = (Category) findViewById(R.id.redCategory01);
-		Category test2 = (Category) findViewById(R.id.redCategory02);
+		//Category test = (Category) findViewById(R.id.redCategory);
+		//Category test1 = (Category) findViewById(R.id.redCategory01);
+		//Category test2 = (Category) findViewById(R.id.redCategory02);
 		/*Category test3 = (Category) findViewById(R.id.redCategory03);
 		Category test4 = (Category) findViewById(R.id.redCategory04);
 		Category test5 = (Category) findViewById(R.id.redCategory05);
@@ -33,9 +33,9 @@ public class MainActivity extends ActionBarActivity {
 		Category test7 = (Category) findViewById(R.id.redCategory07);
 		Category test8 = (Category) findViewById(R.id.redCategory08);*/ 
 		
-		test.setBackgroundColor(Color.RED);
-		test1.setBackgroundColor(Color.GREEN);
-		test2.setBackgroundColor(Color.BLUE);
+		//test.setBackgroundColor(Color.RED);
+		//test1.setBackgroundColor(Color.GREEN);
+		//test2.setBackgroundColor(Color.BLUE);
 		/*test3.setBackgroundColor(Color.WHITE);
 		test4.setBackgroundColor(Color.YELLOW);
 		test5.setBackgroundColor(Color.GREEN);
@@ -45,9 +45,6 @@ public class MainActivity extends ActionBarActivity {
         
         
     }
-
-
-	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

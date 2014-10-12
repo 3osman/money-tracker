@@ -9,30 +9,53 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.money_tracker.MainActivity" >
 
-    <TableRow
-        android:id="@+id/row01"
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout
+        xmlns:sothree="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/sliding_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        sothree:dragView="@+id/dragView"
+        sothree:panelHeight="68dp"
+        sothree:paralaxOffset="100dp"
+        sothree:shadowHeight="4dp" >
 
-        <com.example.money_tracker.Category
-            android:id="@+id/redCategory"
-            android:layout_width="40dp"
-            android:layout_height="60dp"
-            android:layout_weight="1"
-            app:categoryName="categoria1" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Main Content"
+            android:textSize="16sp" />
 
-        <com.example.money_tracker.Category
-            android:id="@+id/redCategory01"
-            android:layout_width="40dp"
-            android:layout_height="60dp"
-            android:layout_weight="1"
-            app:categoryName="categoria1" />
+        <LinearLayout
+            android:id="@+id/dragView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#eeeeee"
+            android:clickable="true"
+            android:focusable="false"
+            android:orientation="vertical" >
 
-        <com.example.money_tracker.Category
-            android:id="@+id/redCategory02"
-            android:layout_width="40dp"
-            android:layout_height="60dp"
-            android:layout_weight="1"
-            app:categoryName="categoria1" />
-    </TableRow>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|bottom"
+                    android:text="Details"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Whatever"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
 </RelativeLayout>
