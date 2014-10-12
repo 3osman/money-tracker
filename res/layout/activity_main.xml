@@ -51,6 +51,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="#FF0000"
                     android:src="@drawable/food3" />
             </TableRow>
 
@@ -63,6 +64,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="#FF0000"
                     android:src="@drawable/house3" />
 
                 <ImageButton
@@ -70,6 +72,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="#FF0000"
                     android:src="@drawable/entertainment3" />
 
                 <ImageButton
@@ -77,6 +80,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="#FF0000"
                     android:src="@drawable/medical3" />
             </TableRow>
 
@@ -89,6 +93,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="#FF0000"
                     android:src="@drawable/shopping3" />
 
                 <ImageButton
@@ -96,6 +101,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="#FF0000"
                     android:src="@drawable/transport3" />
 
                 <ImageButton
@@ -103,6 +109,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="#FF0000"
                     android:src="@drawable/other3" />
             </TableRow>
         </TableLayout>
