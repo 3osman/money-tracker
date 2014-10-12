@@ -5,6 +5,7 @@ import com.money_tracker.dao.EntryDao;
 import com.money_tracker.entities.Entry;
 
 import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,7 +17,7 @@ public class AddEntryActivity extends ActionBarActivity {
 
 	private CategoryDao datasource;
 	private EntryDao entrysource;
-
+	private int value;
 	private TextView txtResult; // Reference to EditText of result
 	private int result = 0; // Result of computation
 	private String inStr = "0"; // Current input string
@@ -29,12 +30,17 @@ public class AddEntryActivity extends ActionBarActivity {
 		datasource.open();
 		entrysource = new EntryDao(this);
 		entrysource.open();
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_entry);
 
 		// Retrieve a reference to the EditText field for displaying the result.
 		txtResult = (TextView) findViewById(R.id.txtResultId);
 		txtResult.setText("0");
+		Bundle extras = getIntent().getExtras();
+		if (extras != null) {
+			value = Integer.parseInt(extras.getString("new_variable_name"));
+		}
 
 		// Register listener (this class) for all the buttons
 		BtnListener listener = new BtnListener();
@@ -96,7 +102,20 @@ public class AddEntryActivity extends ActionBarActivity {
 			// Operator buttons: '+', '-', '*', '/' and '='
 			case R.id.btnAddId:
 				boolean added = compute(
-						Double.parseDouble(txtResult.getText().toString()), 1);
+						Double.parseDouble(txtResult.getText().toString()),
+						value);
+				if (added) {
+					Toast.makeText(AddEntryActivity.this, "Added!",
+							Toast.LENGTH_SHORT).show();
+					Intent i = new Intent(getApplicationContext(),
+							MainActivity.class);
+
+					startActivity(i);
+				} else {
+					Toast.makeText(AddEntryActivity.this,
+							"Entry Couldn't be added, try again",
+							Toast.LENGTH_SHORT).show();
+				}
 				lastOperator = '+';
 
 				break;
