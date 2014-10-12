@@ -28,7 +28,9 @@ public class MainActivity extends ActionBarActivity {
 
 			@Override
 			public void onClick(View arg0) {
-				Intent i = new Intent(getApplicationContext(), AddEntryActivity.class);
+				Intent i = new Intent(getBaseContext(), AddEntryActivity.class);
+				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
 				i.putExtra("new_variable_name","0");
 				startActivity(i);
 
@@ -41,7 +43,8 @@ public class MainActivity extends ActionBarActivity {
 
 			@Override
 			public void onClick(View arg0) {
-				Intent i = new Intent(getApplicationContext(), AddEntryActivity.class);
+				Intent i = new Intent(getBaseContext(), AddEntryActivity.class);
+				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 				i.putExtra("new_variable_name","1");
 				startActivity(i);
 
@@ -54,7 +57,8 @@ public class MainActivity extends ActionBarActivity {
 
 			@Override
 			public void onClick(View arg0) {
-				Intent i = new Intent(getApplicationContext(), AddEntryActivity.class);
+				Intent i = new Intent(getBaseContext(), AddEntryActivity.class);
+				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 				i.putExtra("new_variable_name","2");
 				startActivity(i);
 			}
@@ -66,7 +70,8 @@ public class MainActivity extends ActionBarActivity {
 
 			@Override
 			public void onClick(View arg0) {
-				Intent i = new Intent(getApplicationContext(), AddEntryActivity.class);
+				Intent i = new Intent(getBaseContext(), AddEntryActivity.class);
+				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 				i.putExtra("new_variable_name","3");
 				startActivity(i);
 			}
@@ -78,7 +83,8 @@ public class MainActivity extends ActionBarActivity {
 
 			@Override
 			public void onClick(View arg0) {
-				Intent i = new Intent(getApplicationContext(), AddEntryActivity.class);
+				Intent i = new Intent(getBaseContext(), AddEntryActivity.class);
+				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 				i.putExtra("new_variable_name","4");
 				startActivity(i);
 			}
@@ -90,7 +96,8 @@ public class MainActivity extends ActionBarActivity {
 
 			@Override
 			public void onClick(View arg0) {
-				Intent i = new Intent(getApplicationContext(), AddEntryActivity.class);
+				Intent i = new Intent(getBaseContext(), AddEntryActivity.class);
+				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 				i.putExtra("new_variable_name","5");
 				startActivity(i);
 			}
@@ -102,7 +109,8 @@ public class MainActivity extends ActionBarActivity {
 
 			@Override
 			public void onClick(View arg0) {
-				Intent i = new Intent(getApplicationContext(), AddEntryActivity.class);
+				Intent i = new Intent(getBaseContext(), AddEntryActivity.class);
+				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 				i.putExtra("new_variable_name","6");
 				startActivity(i);
 			}
@@ -114,7 +122,8 @@ public class MainActivity extends ActionBarActivity {
 
 			@Override
 			public void onClick(View arg0) {
-				Intent i = new Intent(getApplicationContext(), AddEntryActivity.class);
+				Intent i = new Intent(getBaseContext(), AddEntryActivity.class);
+				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 				i.putExtra("new_variable_name","7");
 				startActivity(i);
 			}
@@ -126,7 +135,8 @@ public class MainActivity extends ActionBarActivity {
 
 			@Override
 			public void onClick(View arg0) {
-				Intent i = new Intent(getApplicationContext(), AddEntryActivity.class);
+				Intent i = new Intent(getBaseContext(), AddEntryActivity.class);
+				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 				i.putExtra("new_variable_name","8");
 				startActivity(i);
 			}
