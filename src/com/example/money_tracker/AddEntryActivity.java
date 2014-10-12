@@ -25,8 +25,7 @@ public class AddEntryActivity extends ActionBarActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		datasource = new CategoryDao(this);
-		datasource.open();
+		
 		entrysource = new EntryDao(this);
 		entrysource.open();
 		super.onCreate(savedInstanceState);
