@@ -207,7 +207,7 @@ public class MainActivity extends ActionBarActivity {
 		entrysource.open();
 		setValueCategories();
 		double diff = datasource.getDifference();
-		txtResult = (TextView) findViewById(R.id.salary_txt);
+		txtResult = (TextView) findViewById(R.id.details);
 		txtResult.setTypeface(null, Typeface.BOLD);
 		txtResult.setText("Total: "+diff + "$, Swipe for details");
 	}
