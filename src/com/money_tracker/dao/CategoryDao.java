@@ -62,6 +62,28 @@ public class CategoryDao {
 
 	}
 
+	public double getDifference(){
+		double in = 0;
+		double out = 0;
+		Cursor cursor = database.rawQuery(
+				"SELECT SUM(amount) FROM entries where category_id = 0 OR category_id = 1;", null);
+		if (cursor.moveToFirst()) {
+			in =  cursor.getDouble(0);
+		} else {
+			in= 0;
+		}
+		
+		cursor = database.rawQuery(
+				"SELECT SUM(amount) FROM entries where category_id = 7 OR category_id = 8 OR category_id = 2 OR category_id = 3 OR category_id = 4 OR category_id = 5 OR category_id = 6;", null);
+		if (cursor.moveToFirst()) {
+			out =  cursor.getDouble(0);
+		} else {
+			out= 0;
+		}
+		return in - out;
+		
+	}
+
 	public List<Category> getAllCategorys() {
 		List<Category> categories = new ArrayList<Category>();
 

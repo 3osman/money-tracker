@@ -15,6 +15,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:label="Money Tracker" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +25,8 @@
         </activity>
         <activity
             android:name=".AddEntryActivity"
-            android:label="Add Entry" >
+            android:label="Add Entry" 
+            android:screenOrientation="portrait">
         </activity>
        
     </application>
