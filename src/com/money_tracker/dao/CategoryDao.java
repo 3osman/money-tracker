@@ -55,7 +55,7 @@ public class CategoryDao {
 				"SELECT SUM(amount) FROM entries where category_id = " + id
 						+ ";", null);
 		if (cursor.moveToFirst()) {
-			return cursor.getInt(0);
+			return cursor.getDouble(0);
 		} else {
 			return 0;
 		}

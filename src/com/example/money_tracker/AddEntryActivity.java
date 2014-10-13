@@ -23,7 +23,14 @@ public class AddEntryActivity extends ActionBarActivity {
 	private String inStr = "0"; // Current input string
 	// Previous operator: '+', '-', '*', '/', '=' or ' ' (no operator)
 	private char lastOperator = ' ';
+	@Override
+	public void onBackPressed()
+	{
+	    super.onBackPressed(); 
+	    startActivity(new Intent(AddEntryActivity.this, MainActivity.class));
+	    finish();
 
+	}
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		datasource = new CategoryDao(this);

@@ -32,26 +32,50 @@
 
                 <ImageButton
                     android:id="@+id/zero"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="10dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="12sp"
+                    android:layout_marginRight="10sp"
+                    android:layout_marginTop="12sp"
                     android:layout_weight="1"
-                    android:background="#7FC760"
+                    android:background="@drawable/roundcornerg"
+                    android:paddingBottom="4sp"
+                    android:paddingLeft="6sp"
+                    android:paddingRight="6sp"
+                    android:paddingTop="4sp"
                     android:src="@drawable/salary3" />
 
                 <ImageButton
                     android:id="@+id/one"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="10dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="12sp"
+                    android:layout_marginRight="10sp"
+                    android:layout_marginTop="12sp"
                     android:layout_weight="1"
-                    android:background="#7FC760"
+                    android:background="@drawable/roundcornerg"
+                    android:paddingBottom="4sp"
+                    android:paddingLeft="6sp"
+                    android:paddingRight="6sp"
+                    android:paddingTop="4sp"
                     android:src="@drawable/other3" />
 
                 <ImageButton
                     android:id="@+id/two"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="10dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="12sp"
+                    android:layout_marginRight="10sp"
+                    android:layout_marginTop="12sp"
                     android:layout_weight="1"
-                    android:background="#FF0000"
+                    android:background="@drawable/roundcorner"
+                    android:paddingBottom="4sp"
+                    android:paddingLeft="6sp"
+                    android:paddingRight="6sp"
+                    android:paddingTop="4sp"
                     android:src="@drawable/food3" />
             </TableRow>
 
@@ -61,26 +85,50 @@
 
                 <ImageButton
                     android:id="@+id/three"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="10dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="12sp"
+                    android:layout_marginRight="10sp"
+                    android:layout_marginTop="12sp"
                     android:layout_weight="1"
-                    android:background="#FF0000"
+                    android:background="@drawable/roundcorner"
+                    android:paddingBottom="4sp"
+                    android:paddingLeft="6sp"
+                    android:paddingRight="6sp"
+                    android:paddingTop="4sp"
                     android:src="@drawable/house3" />
 
                 <ImageButton
                     android:id="@+id/four"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="10dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="12sp"
+                    android:layout_marginRight="10sp"
+                    android:layout_marginTop="12sp"
                     android:layout_weight="1"
-                    android:background="#FF0000"
+                    android:background="@drawable/roundcorner"
+                    android:paddingBottom="4sp"
+                    android:paddingLeft="6sp"
+                    android:paddingRight="6sp"
+                    android:paddingTop="4sp"
                     android:src="@drawable/entertainment3" />
 
                 <ImageButton
                     android:id="@+id/five"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="10dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="12sp"
+                    android:layout_marginRight="10sp"
+                    android:layout_marginTop="12sp"
                     android:layout_weight="1"
-                    android:background="#FF0000"
+                    android:background="@drawable/roundcorner"
+                    android:paddingBottom="4sp"
+                    android:paddingLeft="6sp"
+                    android:paddingRight="6sp"
+                    android:paddingTop="4sp"
                     android:src="@drawable/medical3" />
             </TableRow>
 
@@ -90,26 +138,50 @@
 
                 <ImageButton
                     android:id="@+id/six"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="10dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="12sp"
+                    android:layout_marginRight="10sp"
+                    android:layout_marginTop="12sp"
                     android:layout_weight="1"
-                    android:background="#FF0000"
+                    android:background="@drawable/roundcorner"
+                    android:paddingBottom="4sp"
+                    android:paddingLeft="6sp"
+                    android:paddingRight="6sp"
+                    android:paddingTop="4sp"
                     android:src="@drawable/shopping3" />
 
                 <ImageButton
                     android:id="@+id/seven"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="10dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="12sp"
+                    android:layout_marginRight="10sp"
+                    android:layout_marginTop="12sp"
                     android:layout_weight="1"
-                    android:background="#FF0000"
+                    android:background="@drawable/roundcorner"
+                    android:paddingBottom="4sp"
+                    android:paddingLeft="6sp"
+                    android:paddingRight="6sp"
+                    android:paddingTop="4sp"
                     android:src="@drawable/transport3" />
 
                 <ImageButton
                     android:id="@+id/eight"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="10dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="12sp"
+                    android:layout_marginRight="10sp"
+                    android:layout_marginTop="12sp"
                     android:layout_weight="1"
-                    android:background="#FF0000"
+                    android:background="@drawable/roundcorner"
+                    android:paddingBottom="4sp"
+                    android:paddingLeft="6sp"
+                    android:paddingRight="6sp"
+                    android:paddingTop="4sp"
                     android:src="@drawable/other3" />
             </TableRow>
         </TableLayout>
@@ -133,15 +205,347 @@
                     android:layout_height="match_parent"
                     android:gravity="center|bottom"
                     android:text="Details"
+                    android:textStyle="bold"
                     android:textSize="16sp" />
             </LinearLayout>
 
-            <TextView
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="50dp" >
+            </View>
+
+            <TableLayout
+                android:id="@+id/details"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="Whatever"
-                android:textSize="16sp" />
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/rounded_corners_table"
+                android:gravity="center" >
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#3ADF00"
+                    android:padding="10dp" >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <ImageView
+                            android:id="@+id/salary_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/salary3" />
+
+                        <TextView
+                            android:id="@+id/salary_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Test" />
+
+                        <ImageView
+                            android:id="@+id/in1_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/in" />
+                    </RelativeLayout>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#3ADF00"
+                    android:padding="10dp" >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <ImageView
+                            android:id="@+id/other_in_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/other3" />
+
+                        <TextView
+                            android:id="@+id/other_in_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Test" />
+
+                        <ImageView
+                            android:id="@+id/in2_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/in" />
+                    </RelativeLayout>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#FF0000"
+                    android:padding="10dp" >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <ImageView
+                            android:id="@+id/food_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/food3" />
+
+                        <TextView
+                            android:id="@+id/food_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Test" />
+
+                        <ImageView
+                            android:id="@+id/out1_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/out" />
+                    </RelativeLayout>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#FF0000"
+                    android:padding="10dp" >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <ImageView
+                            android:id="@+id/house_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/house3" />
+
+                        <TextView
+                            android:id="@+id/house_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Test" />
+
+                        <ImageView
+                            android:id="@+id/out2_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/out" />
+                    </RelativeLayout>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#FF0000"
+                    android:padding="10dp" >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <ImageView
+                            android:id="@+id/enter_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/entertainment3" />
+
+                        <TextView
+                            android:id="@+id/entertainment_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Test" />
+
+                        <ImageView
+                            android:id="@+id/out3_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/out" />
+                    </RelativeLayout>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#FF0000"
+                    android:padding="10dp" >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <ImageView
+                            android:id="@+id/medical_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/medical3" />
+
+                        <TextView
+                            android:id="@+id/medical_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Test" />
+
+                        <ImageView
+                            android:id="@+id/out4_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/out" />
+                    </RelativeLayout>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#FF0000"
+                    android:padding="10dp" >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <ImageView
+                            android:id="@+id/shopping_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/shopping3" />
+
+                        <TextView
+                            android:id="@+id/shopping_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Test" />
+
+                        <ImageView
+                            android:id="@+id/out5_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/out" />
+                    </RelativeLayout>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#FF0000"
+                    android:padding="10dp" >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <ImageView
+                            android:id="@+id/transport_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/transport3" />
+
+                        <TextView
+                            android:id="@+id/transport_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Test" />
+
+                        <ImageView
+                            android:id="@+id/out6_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/out" />
+                    </RelativeLayout>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#FF0000"
+                    android:padding="10dp" >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <ImageView
+                            android:id="@+id/other_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/other3" />
+
+                        <TextView
+                            android:id="@+id/other_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Test" />
+
+                        <ImageView
+                            android:id="@+id/out7_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/out" />
+                    </RelativeLayout>
+                </TableRow>
+            </TableLayout>
         </LinearLayout>
     </com.sothree.slidinguppanel.SlidingUpPanelLayout>
 

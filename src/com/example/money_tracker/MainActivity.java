@@ -7,8 +7,10 @@ import com.money_tracker.dao.EntryDao;
 
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Menu;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import android.view.MenuItem;
@@ -18,6 +20,8 @@ import android.widget.ImageButton;
 public class MainActivity extends ActionBarActivity {
 	private CategoryDao datasource;
 	private EntryDao entrysource;
+	private TextView txtResult;
+	private String amount;
 	ImageButton imageButton;
 
 	public void addListenerOnButtons() {
@@ -144,16 +148,64 @@ public class MainActivity extends ActionBarActivity {
 		});
 
 	}
-
+	public void setValueCategories(){
+	txtResult = (TextView) findViewById(R.id.salary_txt);
+	txtResult.setTypeface(null, Typeface.BOLD);
+	amount = datasource.getCategorySum(0)+"$";
+	txtResult.setText(amount);
+	
+	txtResult = (TextView) findViewById(R.id.other_in_txt);
+	txtResult.setTypeface(null, Typeface.BOLD);
+	amount = datasource.getCategorySum(1)+"$";
+	txtResult.setText(amount);
+	
+	txtResult = (TextView) findViewById(R.id.food_txt);
+	txtResult.setTypeface(null, Typeface.BOLD);
+	amount = datasource.getCategorySum(2)+"$";
+	txtResult.setText(amount);
+	
+	txtResult = (TextView) findViewById(R.id.house_txt);
+	txtResult.setTypeface(null, Typeface.BOLD);
+	amount = datasource.getCategorySum(3)+"$";
+	txtResult.setText(amount);
+	
+	txtResult = (TextView) findViewById(R.id.entertainment_txt);
+	txtResult.setTypeface(null, Typeface.BOLD);
+	amount = datasource.getCategorySum(4)+"$";
+	txtResult.setText(amount);
+	
+	txtResult = (TextView) findViewById(R.id.medical_txt);
+	txtResult.setTypeface(null, Typeface.BOLD);
+	amount = datasource.getCategorySum(5)+"$";
+	txtResult.setText(amount);
+	
+	txtResult = (TextView) findViewById(R.id.shopping_txt);
+	txtResult.setTypeface(null, Typeface.BOLD);
+	amount = datasource.getCategorySum(6)+"$";
+	txtResult.setText(amount);
+	
+	txtResult = (TextView) findViewById(R.id.transport_txt);
+	txtResult.setTypeface(null, Typeface.BOLD);
+	amount = datasource.getCategorySum(7)+"$";
+	txtResult.setText(amount);
+	
+	txtResult = (TextView) findViewById(R.id.other_txt);
+	txtResult.setTypeface(null, Typeface.BOLD);
+	amount = datasource.getCategorySum(8)+"$";
+	txtResult.setText(amount);
+	
+	}
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		addListenerOnButtons();
+		
 		datasource = new CategoryDao(this);
 		datasource.open();
 		entrysource = new EntryDao(this);
 		entrysource.open();
+		setValueCategories();
 		// Category test = (Category) findViewById(R.id.redCategory);
 		// Category test1 = (Category) findViewById(R.id.redCategory01);
 		// Category test2 = (Category) findViewById(R.id.redCategory02);
