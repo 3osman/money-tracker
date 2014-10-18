@@ -6,7 +6,7 @@ import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
-import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieData;
 
 import android.support.v7.app.ActionBarActivity;
@@ -38,10 +38,10 @@ public class ChartActivity extends ActionBarActivity {
 		valsComp2.add(c2e2);
 		// ...
 
-		LineDataSet setComp1 = new LineDataSet(valsComp1, "Company 1");
-		LineDataSet setComp2 = new LineDataSet(valsComp2, "Company 2");
+		PieDataSet setComp1 = new PieDataSet(valsComp1, "Company 1");
+		PieDataSet setComp2 = new PieDataSet(valsComp2, "Company 2");
 
-		ArrayList<LineDataSet> dataSets = new ArrayList<LineDataSet>();
+		ArrayList<PieDataSet> dataSets = new ArrayList<PieDataSet>();
 		dataSets.add(setComp1);
 		dataSets.add(setComp2);
 
