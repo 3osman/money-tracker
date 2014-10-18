@@ -4,6 +4,7 @@ public class Entry {
 	private long id;
 	private long categoryId;
 	private double amount;
+	
 
 	public long getId() {
 		return id;

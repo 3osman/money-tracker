@@ -2,10 +2,15 @@ package com.example.money_tracker;
 
 import com.money_tracker.dao.CategoryDao;
 import com.money_tracker.dao.EntryDao;
+import com.money_tracker.dao.LocationDao;
 import com.money_tracker.entities.Entry;
 
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,30 +22,64 @@ public class AddEntryActivity extends ActionBarActivity {
 
 	private CategoryDao datasource;
 	private EntryDao entrysource;
+	private LocationDao locationsource;
 	private int value;
 	private TextView txtResult; // Reference to EditText of result
 	private int result = 0; // Result of computation
 	private String inStr = "0"; // Current input string
 	// Previous operator: '+', '-', '*', '/', '=' or ' ' (no operator)
 	private char lastOperator = ' ';
+	private LocationManager locationManager;
+	double currentlat;
+	private CheckBox chkIos;
+	double currentlong;
+	private boolean locationEnabled = false;
+	String provider;
+
 	@Override
-	public void onBackPressed()
-	{
-	    super.onBackPressed(); 
-	    startActivity(new Intent(AddEntryActivity.this, MainActivity.class));
-	    finish();
+	public void onBackPressed() {
+		super.onBackPressed();
+		startActivity(new Intent(AddEntryActivity.this, MainActivity.class));
+		finish();
 
 	}
+
+	public void addListenerOnChkIos() {
+
+		chkIos = (CheckBox) findViewById(R.id.chkIos);
+
+		chkIos.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// is chkIos checked?
+				if (((CheckBox) v).isChecked()) {
+					locationEnabled = true;
+				} else {
+					locationEnabled = false;
+				}
+
+			}
+		});
+
+	}
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		datasource = new CategoryDao(this);
 		datasource.open();
 		entrysource = new EntryDao(this);
 		entrysource.open();
+		locationsource = new LocationDao(this);
+		locationsource.open();
+		Criteria criteria = new Criteria();
+		locationManager = (LocationManager) this.getSystemService(LOCATION_SERVICE);
+		provider = locationManager.getBestProvider(criteria, true);
+		
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_entry);
-
+		addListenerOnChkIos();
 		// Retrieve a reference to the EditText field for displaying the result.
 		txtResult = (TextView) findViewById(R.id.txtResultId);
 		txtResult.setText("0");
@@ -114,9 +153,9 @@ public class AddEntryActivity extends ActionBarActivity {
 				if (added) {
 					Toast.makeText(AddEntryActivity.this, "Entry Added",
 							Toast.LENGTH_SHORT).show();
-					Intent i = new Intent(getBaseContext(),
-							MainActivity.class);
-					i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+					Intent i = new Intent(getBaseContext(), MainActivity.class);
+					i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+							| Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
 					startActivity(i);
 				} else {
@@ -137,6 +176,33 @@ public class AddEntryActivity extends ActionBarActivity {
 			}
 		}
 
+		LocationListener locationListener = new LocationListener() {
+
+			@Override
+			public void onLocationChanged(Location location) {
+				currentlat = location.getLatitude();
+				currentlong = location.getLongitude();
+			}
+
+			@Override
+			public void onProviderDisabled(String arg0) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void onProviderEnabled(String arg0) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void onStatusChanged(String arg0, int arg1, Bundle arg2) {
+				// TODO Auto-generated method stub
+
+			}
+		};
+
 		// User pushes '+', '-', '*', '/' or '=' button.
 		// Perform computation on the previous result and the current input
 		// number,
@@ -144,7 +210,19 @@ public class AddEntryActivity extends ActionBarActivity {
 		private boolean compute(double amount, int category_id) {
 
 			// save the new comment to the database
+
 			Entry entry = entrysource.createEntry(amount, category_id);
+
+			// if marked true
+			if (locationEnabled) {
+				if (provider != null) {
+					locationManager.requestLocationUpdates(provider, 400L, 1f,
+							locationListener);
+				}
+				com.money_tracker.entities.Location l = locationsource
+						.createLocation(String.valueOf(currentlat),
+								String.valueOf(currentlong), "0", entry.getId());
+			}
 
 			return (entry != null);
 

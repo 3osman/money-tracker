@@ -15,8 +15,8 @@ public class EntryDao {
 	private SQLiteDatabase database;
 	private MoneyTrackerSqlInit dbHelper;
 	private String[] allColumns = { MoneyTrackerSqlInit.COLUMN_ID,
-			MoneyTrackerSqlInit.COLUMN_CATEGORYID ,
-			MoneyTrackerSqlInit.COLUMN_AMOUNT};
+			MoneyTrackerSqlInit.COLUMN_CATEGORYID,
+			MoneyTrackerSqlInit.COLUMN_AMOUNT };
 
 	public EntryDao(Context context) {
 		dbHelper = new MoneyTrackerSqlInit(context);
@@ -34,6 +34,7 @@ public class EntryDao {
 		ContentValues values = new ContentValues();
 		values.put(MoneyTrackerSqlInit.COLUMN_CATEGORYID, category_id + "");
 		values.put(MoneyTrackerSqlInit.COLUMN_AMOUNT, amount + "");
+
 		long insertId = database.insert(MoneyTrackerSqlInit.TABLE_ENTRIES,
 				null, values);
 		Cursor cursor = database.query(MoneyTrackerSqlInit.TABLE_ENTRIES,
@@ -74,6 +75,7 @@ public class EntryDao {
 		entry.setId(cursor.getLong(0));
 		entry.setCategoryId(Integer.parseInt(cursor.getString(1)));
 		entry.setAmount(Double.parseDouble(cursor.getString(2)));
+	
 		return entry;
 	}
 }

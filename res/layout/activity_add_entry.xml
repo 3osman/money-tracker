@@ -136,5 +136,13 @@
         android:layout_alignLeft="@+id/tableId"
         android:background="#7FC760"
         android:text="@string/plus" />
+
+     <CheckBox
+         android:id="@+id/chkIos"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_above="@+id/btnAddId"
+         android:layout_alignLeft="@+id/txtResultId"
+         android:text="Add locaition" />
    
 </RelativeLayout>
