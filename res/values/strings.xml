@@ -18,5 +18,6 @@
     <string name="clear">clear</string>
     <string name="plus">+</string>
     <string name="dote">.</string>
+    <string name="title_activity_chart">ChartActivity</string>
 
 </resources>
