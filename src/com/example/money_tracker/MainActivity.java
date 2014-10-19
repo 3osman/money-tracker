@@ -26,7 +26,7 @@ public class MainActivity extends ActionBarActivity {
 	ImageButton imageButton;
 
 	public void addListenerOnButtons() {
-		
+
 		Button button = (Button) findViewById(R.id.btnViewChart);
 
 		button.setOnClickListener(new OnClickListener() {
@@ -48,9 +48,10 @@ public class MainActivity extends ActionBarActivity {
 			@Override
 			public void onClick(View arg0) {
 				Intent i = new Intent(getBaseContext(), AddEntryActivity.class);
-				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+						| Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
-				i.putExtra("new_variable_name","0");
+				i.putExtra("new_variable_name", "0");
 				startActivity(i);
 
 			}
@@ -63,8 +64,9 @@ public class MainActivity extends ActionBarActivity {
 			@Override
 			public void onClick(View arg0) {
 				Intent i = new Intent(getBaseContext(), AddEntryActivity.class);
-				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-				i.putExtra("new_variable_name","1");
+				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+						| Intent.FLAG_ACTIVITY_CLEAR_TASK);
+				i.putExtra("new_variable_name", "1");
 				startActivity(i);
 
 			}
@@ -77,8 +79,9 @@ public class MainActivity extends ActionBarActivity {
 			@Override
 			public void onClick(View arg0) {
 				Intent i = new Intent(getBaseContext(), AddEntryActivity.class);
-				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-				i.putExtra("new_variable_name","2");
+				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+						| Intent.FLAG_ACTIVITY_CLEAR_TASK);
+				i.putExtra("new_variable_name", "2");
 				startActivity(i);
 			}
 
@@ -90,8 +93,9 @@ public class MainActivity extends ActionBarActivity {
 			@Override
 			public void onClick(View arg0) {
 				Intent i = new Intent(getBaseContext(), AddEntryActivity.class);
-				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-				i.putExtra("new_variable_name","3");
+				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+						| Intent.FLAG_ACTIVITY_CLEAR_TASK);
+				i.putExtra("new_variable_name", "3");
 				startActivity(i);
 			}
 
@@ -103,8 +107,9 @@ public class MainActivity extends ActionBarActivity {
 			@Override
 			public void onClick(View arg0) {
 				Intent i = new Intent(getBaseContext(), AddEntryActivity.class);
-				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-				i.putExtra("new_variable_name","4");
+				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+						| Intent.FLAG_ACTIVITY_CLEAR_TASK);
+				i.putExtra("new_variable_name", "4");
 				startActivity(i);
 			}
 
@@ -116,8 +121,9 @@ public class MainActivity extends ActionBarActivity {
 			@Override
 			public void onClick(View arg0) {
 				Intent i = new Intent(getBaseContext(), AddEntryActivity.class);
-				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-				i.putExtra("new_variable_name","5");
+				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+						| Intent.FLAG_ACTIVITY_CLEAR_TASK);
+				i.putExtra("new_variable_name", "5");
 				startActivity(i);
 			}
 
@@ -129,8 +135,9 @@ public class MainActivity extends ActionBarActivity {
 			@Override
 			public void onClick(View arg0) {
 				Intent i = new Intent(getBaseContext(), AddEntryActivity.class);
-				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-				i.putExtra("new_variable_name","6");
+				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+						| Intent.FLAG_ACTIVITY_CLEAR_TASK);
+				i.putExtra("new_variable_name", "6");
 				startActivity(i);
 			}
 
@@ -142,8 +149,9 @@ public class MainActivity extends ActionBarActivity {
 			@Override
 			public void onClick(View arg0) {
 				Intent i = new Intent(getBaseContext(), AddEntryActivity.class);
-				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-				i.putExtra("new_variable_name","7");
+				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+						| Intent.FLAG_ACTIVITY_CLEAR_TASK);
+				i.putExtra("new_variable_name", "7");
 				startActivity(i);
 			}
 
@@ -155,67 +163,69 @@ public class MainActivity extends ActionBarActivity {
 			@Override
 			public void onClick(View arg0) {
 				Intent i = new Intent(getBaseContext(), AddEntryActivity.class);
-				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-				i.putExtra("new_variable_name","8");
+				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+						| Intent.FLAG_ACTIVITY_CLEAR_TASK);
+				i.putExtra("new_variable_name", "8");
 				startActivity(i);
 			}
 
 		});
 
 	}
-	public void setValueCategories(){
-	txtResult = (TextView) findViewById(R.id.salary_txt);
-	txtResult.setTypeface(null, Typeface.BOLD);
-	amount = datasource.getCategorySum(0)+"$";
-	txtResult.setText(amount);
-	
-	txtResult = (TextView) findViewById(R.id.other_in_txt);
-	txtResult.setTypeface(null, Typeface.BOLD);
-	amount = datasource.getCategorySum(1)+"$";
-	txtResult.setText(amount);
-	
-	txtResult = (TextView) findViewById(R.id.food_txt);
-	txtResult.setTypeface(null, Typeface.BOLD);
-	amount = datasource.getCategorySum(2)+"$";
-	txtResult.setText(amount);
-	
-	txtResult = (TextView) findViewById(R.id.house_txt);
-	txtResult.setTypeface(null, Typeface.BOLD);
-	amount = datasource.getCategorySum(3)+"$";
-	txtResult.setText(amount);
-	
-	txtResult = (TextView) findViewById(R.id.entertainment_txt);
-	txtResult.setTypeface(null, Typeface.BOLD);
-	amount = datasource.getCategorySum(4)+"$";
-	txtResult.setText(amount);
-	
-	txtResult = (TextView) findViewById(R.id.medical_txt);
-	txtResult.setTypeface(null, Typeface.BOLD);
-	amount = datasource.getCategorySum(5)+"$";
-	txtResult.setText(amount);
-	
-	txtResult = (TextView) findViewById(R.id.shopping_txt);
-	txtResult.setTypeface(null, Typeface.BOLD);
-	amount = datasource.getCategorySum(6)+"$";
-	txtResult.setText(amount);
-	
-	txtResult = (TextView) findViewById(R.id.transport_txt);
-	txtResult.setTypeface(null, Typeface.BOLD);
-	amount = datasource.getCategorySum(7)+"$";
-	txtResult.setText(amount);
-	
-	txtResult = (TextView) findViewById(R.id.other_txt);
-	txtResult.setTypeface(null, Typeface.BOLD);
-	amount = datasource.getCategorySum(8)+"$";
-	txtResult.setText(amount);
-	
+
+	public void setValueCategories() {
+		txtResult = (TextView) findViewById(R.id.salary_txt);
+		txtResult.setTypeface(null, Typeface.BOLD);
+		amount = datasource.getCategorySum(0) + "$";
+		txtResult.setText(amount);
+
+		txtResult = (TextView) findViewById(R.id.other_in_txt);
+		txtResult.setTypeface(null, Typeface.BOLD);
+		amount = datasource.getCategorySum(1) + "$";
+		txtResult.setText(amount);
+
+		txtResult = (TextView) findViewById(R.id.food_txt);
+		txtResult.setTypeface(null, Typeface.BOLD);
+		amount = datasource.getCategorySum(2) + "$";
+		txtResult.setText(amount);
+
+		txtResult = (TextView) findViewById(R.id.house_txt);
+		txtResult.setTypeface(null, Typeface.BOLD);
+		amount = datasource.getCategorySum(3) + "$";
+		txtResult.setText(amount);
+
+		txtResult = (TextView) findViewById(R.id.entertainment_txt);
+		txtResult.setTypeface(null, Typeface.BOLD);
+		amount = datasource.getCategorySum(4) + "$";
+		txtResult.setText(amount);
+
+		txtResult = (TextView) findViewById(R.id.medical_txt);
+		txtResult.setTypeface(null, Typeface.BOLD);
+		amount = datasource.getCategorySum(5) + "$";
+		txtResult.setText(amount);
+
+		txtResult = (TextView) findViewById(R.id.shopping_txt);
+		txtResult.setTypeface(null, Typeface.BOLD);
+		amount = datasource.getCategorySum(6) + "$";
+		txtResult.setText(amount);
+
+		txtResult = (TextView) findViewById(R.id.transport_txt);
+		txtResult.setTypeface(null, Typeface.BOLD);
+		amount = datasource.getCategorySum(7) + "$";
+		txtResult.setText(amount);
+
+		txtResult = (TextView) findViewById(R.id.other_txt);
+		txtResult.setTypeface(null, Typeface.BOLD);
+		amount = datasource.getCategorySum(8) + "$";
+		txtResult.setText(amount);
+
 	}
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		addListenerOnButtons();
-		
 		datasource = new CategoryDao(this);
 		datasource.open();
 		entrysource = new EntryDao(this);
@@ -224,7 +234,20 @@ public class MainActivity extends ActionBarActivity {
 		double diff = datasource.getDifference();
 		txtResult = (TextView) findViewById(R.id.details);
 		txtResult.setTypeface(null, Typeface.BOLD);
-		txtResult.setText("Total: "+diff + "$, Swipe for details");
+		txtResult.setText(diff + "$");
+		if (diff < 0) {
+			txtResult.setBackgroundResource(R.drawable.roundcorner);
+			//b.setBackground(getResources().getDrawable(R.drawable.roundcorner));
+
+		//	em.setBackground(().getDrawable(R.drawable.roundcorner));
+
+		} else {
+			txtResult.setBackgroundResource(R.drawable.roundcornerg);
+			//b.setBackground(getResources().getDrawable(R.drawable.roundcornerg));
+			//em.setBackground(getResources().getDrawable(R.drawable.roundcornerg));
+
+
+		}
 	}
 
 	@Override

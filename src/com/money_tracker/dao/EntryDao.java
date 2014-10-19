@@ -16,7 +16,8 @@ public class EntryDao {
 	private MoneyTrackerSqlInit dbHelper;
 	private String[] allColumns = { MoneyTrackerSqlInit.COLUMN_ID,
 			MoneyTrackerSqlInit.COLUMN_CATEGORYID,
-			MoneyTrackerSqlInit.COLUMN_AMOUNT, MoneyTrackerSqlInit.COLUMN_DATE };
+			MoneyTrackerSqlInit.COLUMN_AMOUNT, 
+			MoneyTrackerSqlInit.COLUMN_DATE };
 
 	public EntryDao(Context context) {
 		dbHelper = new MoneyTrackerSqlInit(context);
@@ -30,7 +31,7 @@ public class EntryDao {
 		dbHelper.close();
 	}
 
-	public Entry createEntry(double amount, int category_id, int date) {
+	public Entry createEntry(double amount, int category_id, String date) {
 		ContentValues values = new ContentValues();
 		values.put(MoneyTrackerSqlInit.COLUMN_CATEGORYID, category_id + "");
 		values.put(MoneyTrackerSqlInit.COLUMN_AMOUNT, amount + "");
@@ -105,7 +106,7 @@ public class EntryDao {
 		List<Entry> entries = new ArrayList<Entry>();
 
 		Cursor cursor = database.query(MoneyTrackerSqlInit.TABLE_ENTRIES,
-				allColumns, null, null, null, null, null);
+				allColumns, null, null, null, null, MoneyTrackerSqlInit.COLUMN_DATE+" DESC");
 
 		cursor.moveToFirst();
 		while (!cursor.isAfterLast()) {
@@ -123,7 +124,7 @@ public class EntryDao {
 		entry.setId(cursor.getLong(0));
 		entry.setCategoryId(Integer.parseInt(cursor.getString(1)));
 		entry.setAmount(Double.parseDouble(cursor.getString(2)));
-		entry.setDate(Integer.parseInt(cursor.getString(2)));
+		entry.setDate(Long.parseLong(cursor.getString(3)));
 
 		return entry;
 	}

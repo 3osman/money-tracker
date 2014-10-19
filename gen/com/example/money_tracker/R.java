@@ -1604,7 +1604,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f050016;
         public static final int action_menu_presenter=0x7f050017;
         public static final int action_mode_close_button=0x7f05003a;
-        public static final int action_settings=0x7f05008e;
+        public static final int action_settings=0x7f050091;
         public static final int activity_chooser_view_content=0x7f05003b;
         public static final int always=0x7f05000b;
         public static final int anchored=0x7f05001c;
@@ -1668,7 +1668,7 @@ containing a value of this type.
         public static final int in2_image=0x7f050077;
         public static final int listMode=0x7f050001;
         public static final int list_item=0x7f05003f;
-        public static final int map=0x7f05008d;
+        public static final int map=0x7f050090;
         public static final int match_parent=0x7f050028;
         public static final int medical_image=0x7f050081;
         public static final int medical_txt=0x7f050082;
@@ -1723,12 +1723,15 @@ containing a value of this type.
         public static final int tabMode=0x7f050002;
         public static final int tableId=0x7f050052;
         public static final int tableRow1=0x7f05005c;
+        public static final int table_view_test_main=0x7f05008d;
         public static final int terrain=0x7f05001f;
         public static final int three=0x7f05006a;
         public static final int title=0x7f050041;
         public static final int top_action_bar=0x7f050036;
         public static final int transport_image=0x7f050087;
         public static final int transport_txt=0x7f050088;
+        public static final int tvt_scroll=0x7f05008e;
+        public static final int tvt_tableview=0x7f05008f;
         public static final int two=0x7f050069;
         public static final int txtResultId=0x7f050060;
         public static final int up=0x7f050037;
@@ -1793,16 +1796,18 @@ containing a value of this type.
         public static final int activity_chart_activity2=0x7f03001a;
         public static final int activity_main=0x7f03001b;
         public static final int activity_tab=0x7f03001c;
-        public static final int map_entries=0x7f03001d;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001e;
+        public static final int history=0x7f03001d;
+        public static final int map_entries=0x7f03001e;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001f;
     }
     public static final class menu {
         public static final int add_entry=0x7f0c0000;
         public static final int chart=0x7f0c0001;
         public static final int chart_activity2=0x7f0c0002;
-        public static final int main=0x7f0c0003;
-        public static final int tab=0x7f0c0004;
-        public static final int test_database=0x7f0c0005;
+        public static final int history=0x7f0c0003;
+        public static final int main=0x7f0c0004;
+        public static final int tab=0x7f0c0005;
+        public static final int test_database=0x7f0c0006;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 

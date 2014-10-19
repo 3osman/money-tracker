@@ -181,9 +181,9 @@ public class AddEntryActivity extends ActionBarActivity {
 
 			// save the new comment to the database
 			Date now = new Date();
-
+			
 			Entry entry = entrysource.createEntry(amount, category_id,
-					(int) now.getTime());
+					String.valueOf(now.getTime()));
 
 			// if marked true
 			if (locationEnabled) {
