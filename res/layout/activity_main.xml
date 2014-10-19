@@ -230,10 +230,16 @@
                     android:layout_alignParentBottom="true"
                     android:gravity="center" >
 
+                    <Button
+                        android:id="@+id/btnViewChart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View Chart" />
+
                     <TableRow
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                         android:layout_marginBottom="6sp"
+                        android:layout_marginBottom="6sp"
                         android:layout_weight="1"
                         android:background="@drawable/roundcornerg"
                         android:padding="6dp" >
@@ -270,7 +276,7 @@
                     <TableRow
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                         android:layout_marginBottom="6sp"
+                        android:layout_marginBottom="6sp"
                         android:layout_weight="1"
                         android:background="@drawable/roundcornerg"
                         android:padding="6dp" >
@@ -307,7 +313,7 @@
                     <TableRow
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                         android:layout_marginBottom="6sp"
+                        android:layout_marginBottom="6sp"
                         android:layout_weight="1"
                         android:background="@drawable/roundcorner"
                         android:padding="6dp" >
@@ -344,7 +350,7 @@
                     <TableRow
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                         android:layout_marginBottom="6sp"
+                        android:layout_marginBottom="6sp"
                         android:layout_weight="1"
                         android:background="@drawable/roundcorner"
                         android:padding="6dp" >
@@ -381,7 +387,7 @@
                     <TableRow
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                         android:layout_marginBottom="6sp"
+                        android:layout_marginBottom="6sp"
                         android:layout_weight="1"
                         android:background="@drawable/roundcorner"
                         android:padding="6dp" >
@@ -418,7 +424,7 @@
                     <TableRow
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                         android:layout_marginBottom="6sp"
+                        android:layout_marginBottom="6sp"
                         android:layout_weight="1"
                         android:background="@drawable/roundcorner"
                         android:padding="6dp" >
@@ -455,7 +461,7 @@
                     <TableRow
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                         android:layout_marginBottom="6sp"
+                        android:layout_marginBottom="6sp"
                         android:layout_weight="1"
                         android:background="@drawable/roundcorner"
                         android:padding="6dp" >
@@ -492,7 +498,7 @@
                     <TableRow
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                         android:layout_marginBottom="6sp"
+                        android:layout_marginBottom="6sp"
                         android:layout_weight="1"
                         android:background="@drawable/roundcorner"
                         android:padding="6dp" >

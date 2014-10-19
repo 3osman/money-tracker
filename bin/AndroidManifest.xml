@@ -37,8 +37,7 @@
 
         <activity
             android:name=".MainActivity"
-            android:label="Money Tracker"
-             >
+            android:label="Money Tracker" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,13 +46,19 @@
         </activity>
         <activity
             android:name=".AddEntryActivity"
-            android:label="Add Entry"
-             >
-
+            android:label="Add Entry" >
         </activity>
         <activity
             android:name=".ChartActivity"
             android:label="@string/title_activity_chart" >
+        </activity>
+        <activity
+            android:name=".ChartActivity2"
+            android:label="@string/title_activity_chart_activity2" >
+        </activity>
+        <activity
+            android:name=".TabActivity"
+            android:label="@string/title_activity_tab" >
         </activity>
     </application>
 

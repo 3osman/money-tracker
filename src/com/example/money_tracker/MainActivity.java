@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Menu;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +26,20 @@ public class MainActivity extends ActionBarActivity {
 	ImageButton imageButton;
 
 	public void addListenerOnButtons() {
+		
+		Button button = (Button) findViewById(R.id.btnViewChart);
+
+		button.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+
+				Intent i = new Intent(getBaseContext(), TabBarActivity.class);
+				startActivity(i);
+
+			}
+
+		});
 
 		imageButton = (ImageButton) findViewById(R.id.zero);
 
@@ -32,10 +47,10 @@ public class MainActivity extends ActionBarActivity {
 
 			@Override
 			public void onClick(View arg0) {
-				Intent i = new Intent(getBaseContext(), ChartActivity.class);
-				//i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+				Intent i = new Intent(getBaseContext(), AddEntryActivity.class);
+				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
-				//i.putExtra("new_variable_name","0");
+				i.putExtra("new_variable_name","0");
 				startActivity(i);
 
 			}
