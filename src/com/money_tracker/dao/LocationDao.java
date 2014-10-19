@@ -15,8 +15,7 @@ public class LocationDao {
 	private SQLiteDatabase database;
 	private MoneyTrackerSqlInit dbHelper;
 	private String[] allColumns = { MoneyTrackerSqlInit.COLUMN_ID,
-			MoneyTrackerSqlInit.FIELD_LAT, MoneyTrackerSqlInit.FIELD_LAT,
-			MoneyTrackerSqlInit.FIELD_ZOOM };
+			MoneyTrackerSqlInit.FIELD_LAT, MoneyTrackerSqlInit.FIELD_LNG, MoneyTrackerSqlInit.COLUMN_ENTRYID };
 
 	public LocationDao(Context context) {
 		dbHelper = new MoneyTrackerSqlInit(context);
@@ -30,13 +29,12 @@ public class LocationDao {
 		dbHelper.close();
 	}
 
-	public Location createLocation(String lat, String lng, String zoom,
+	public Location createLocation(String lat, String lng,
 			long entry_id) {
 		ContentValues values = new ContentValues();
 		values.put(MoneyTrackerSqlInit.COLUMN_ENTRYID, entry_id + "");
 		values.put(MoneyTrackerSqlInit.FIELD_LAT, lat);
 		values.put(MoneyTrackerSqlInit.FIELD_LNG, lng);
-		values.put(MoneyTrackerSqlInit.FIELD_ZOOM, zoom);
 		long insertId = database.insert(MoneyTrackerSqlInit.TABLE_LOCATIONS,
 				null, values);
 		Cursor cursor = database.query(MoneyTrackerSqlInit.TABLE_LOCATIONS,
@@ -74,11 +72,18 @@ public class LocationDao {
 
 	private Location cursorToLocation(Cursor cursor) {
 		Location entry = new Location();
+		String test = cursor.getString(0);
+		String test1 = cursor.getString(1);
+
+		String test2 = cursor.getString(2);
+
+		String test3 = cursor.getString(3);
+
 		entry.setId(cursor.getLong(0));
-		entry.setEntryId(Integer.parseInt(cursor.getString(1)));
-		entry.setLat(cursor.getString(2));
-		entry.setLng(cursor.getString(3));
-		entry.setZoom(cursor.getString(4));
+		entry.setEntryId(Integer.parseInt(cursor.getString(3)));
+		entry.setLat(cursor.getString(1));
+		entry.setLng(cursor.getString(2));
+		//entry.setZoom(cursor.getString(4));
 		return entry;
 	}
 }

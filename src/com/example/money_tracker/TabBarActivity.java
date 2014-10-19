@@ -16,24 +16,38 @@ public class TabBarActivity extends TabActivity {
 		Resources ressources = getResources();
 		TabHost tabHost = getTabHost();
 
-		// Android tab
+		// Chart Tab
 		Intent intentAndroid = new Intent().setClass(this, ChartActivity.class);
-		TabSpec tabSpecAndroid = tabHost.newTabSpec("Android")
+		TabSpec tabSpecAndroid = tabHost.newTabSpec("Chartin")
 				.setIndicator("", ressources.getDrawable(R.drawable.in))
 				.setContent(intentAndroid);
 
-		// Apple tab
+		// chart Tab
 		Intent intentApple = new Intent().setClass(this, ChartActivity2.class);
-		TabSpec tabSpecApple = tabHost.newTabSpec("Apple")
+		TabSpec tabSpecApple = tabHost.newTabSpec("Chartout")
 				.setIndicator("", ressources.getDrawable(R.drawable.out))
 				.setContent(intentApple);
+
+		// Date Tab
+		Intent intentDate = new Intent().setClass(this, ChartActivity2.class);
+		TabSpec tabSpecDate = tabHost.newTabSpec("Date")
+				.setIndicator("", ressources.getDrawable(R.drawable.out))
+				.setContent(intentDate);
+
+		// Map Tab
+		Intent intentMaps = new Intent().setClass(this, ShowMap.class);
+		TabSpec tabSpecMap = tabHost.newTabSpec("Map")
+				.setIndicator("Map")
+				.setContent(intentMaps);
 
 		// add all tabs
 		tabHost.addTab(tabSpecAndroid);
 		tabHost.addTab(tabSpecApple);
+		tabHost.addTab(tabSpecDate);
+		tabHost.addTab(tabSpecMap);
 
 		// set Windows tab as default (zero based)
-		tabHost.setCurrentTab(2);
+		tabHost.setCurrentTab(0);
 	}
 
 }

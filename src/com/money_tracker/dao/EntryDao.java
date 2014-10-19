@@ -16,7 +16,7 @@ public class EntryDao {
 	private MoneyTrackerSqlInit dbHelper;
 	private String[] allColumns = { MoneyTrackerSqlInit.COLUMN_ID,
 			MoneyTrackerSqlInit.COLUMN_CATEGORYID,
-			MoneyTrackerSqlInit.COLUMN_AMOUNT };
+			MoneyTrackerSqlInit.COLUMN_AMOUNT, MoneyTrackerSqlInit.COLUMN_DATE };
 
 	public EntryDao(Context context) {
 		dbHelper = new MoneyTrackerSqlInit(context);
@@ -30,10 +30,11 @@ public class EntryDao {
 		dbHelper.close();
 	}
 
-	public Entry createEntry(double amount, int category_id) {
+	public Entry createEntry(double amount, int category_id, int date) {
 		ContentValues values = new ContentValues();
 		values.put(MoneyTrackerSqlInit.COLUMN_CATEGORYID, category_id + "");
 		values.put(MoneyTrackerSqlInit.COLUMN_AMOUNT, amount + "");
+		values.put(MoneyTrackerSqlInit.COLUMN_DATE, date);
 
 		long insertId = database.insert(MoneyTrackerSqlInit.TABLE_ENTRIES,
 				null, values);
@@ -44,6 +45,53 @@ public class EntryDao {
 		Entry newEntry = cursorToEntry(cursor);
 		cursor.close();
 		return newEntry;
+	}
+
+	public String getValfromId(long id){
+		Cursor cursor = database
+				.rawQuery("SELECT amount FROM entries where _id = " + id
+						+ ";", null);
+		if (cursor.moveToFirst()) {
+			return String.valueOf(cursor.getDouble(0));
+		} else {
+			return "";
+		}
+	}
+	public String getCategoryById(long id) {
+		int cat_id = -1;
+		
+		Cursor cursor = database
+				.rawQuery("SELECT category_id FROM entries where _id = " + id
+						+ ";", null);
+		if (cursor.moveToFirst()) {
+			cat_id = cursor.getInt(0);
+		} else {
+			cat_id = -1;
+		}
+		switch(cat_id){
+		case 0:
+			return "Salary";
+			
+		case 1:
+			return "Other-In";
+		case 2:
+			return "Food";
+		case 3:
+			return "House";
+		case 4:
+			return "Entertainment";
+		case 5:
+			return "Medical";
+		case 6:
+			return "Shopping";
+		case 7:
+			return "Transport";
+		case 8:
+			return "Other-Out";
+		case -1:
+			return "";
+		}
+		return "";
 	}
 
 	public void deleteEntry(Entry entry) {
@@ -75,7 +123,8 @@ public class EntryDao {
 		entry.setId(cursor.getLong(0));
 		entry.setCategoryId(Integer.parseInt(cursor.getString(1)));
 		entry.setAmount(Double.parseDouble(cursor.getString(2)));
-	
+		entry.setDate(Integer.parseInt(cursor.getString(2)));
+
 		return entry;
 	}
 }

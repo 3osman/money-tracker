@@ -5,7 +5,6 @@ public class Location {
 	private long entryId;
 	private String lat;
 	private String lng;
-	private String zoom;
 	
 
 	public long getEntryId() {
@@ -32,14 +31,7 @@ public class Location {
 		this.lng = lng;
 	}
 
-	public String getZoom() {
-		return zoom;
-	}
-
-	public void setZoom(String zoom) {
-		this.zoom = zoom;
-	}
-
+	
 	public long getId() {
 		return id;
 	}

@@ -1,5 +1,7 @@
 package com.example.money_tracker;
 
+import java.util.Date;
+
 import com.money_tracker.dao.CategoryDao;
 import com.money_tracker.dao.EntryDao;
 import com.money_tracker.dao.LocationDao;
@@ -12,6 +14,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,12 +32,10 @@ public class AddEntryActivity extends ActionBarActivity {
 	private String inStr = "0"; // Current input string
 	// Previous operator: '+', '-', '*', '/', '=' or ' ' (no operator)
 	private char lastOperator = ' ';
-	private LocationManager locationManager;
 	double currentlat;
 	private CheckBox chkIos;
 	double currentlong;
 	private boolean locationEnabled = false;
-	String provider;
 
 	@Override
 	public void onBackPressed() {
@@ -72,10 +73,6 @@ public class AddEntryActivity extends ActionBarActivity {
 		entrysource.open();
 		locationsource = new LocationDao(this);
 		locationsource.open();
-		Criteria criteria = new Criteria();
-		locationManager = (LocationManager) this.getSystemService(LOCATION_SERVICE);
-		provider = locationManager.getBestProvider(criteria, true);
-		
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_entry);
@@ -176,33 +173,6 @@ public class AddEntryActivity extends ActionBarActivity {
 			}
 		}
 
-		LocationListener locationListener = new LocationListener() {
-
-			@Override
-			public void onLocationChanged(Location location) {
-				currentlat = location.getLatitude();
-				currentlong = location.getLongitude();
-			}
-
-			@Override
-			public void onProviderDisabled(String arg0) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void onProviderEnabled(String arg0) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void onStatusChanged(String arg0, int arg1, Bundle arg2) {
-				// TODO Auto-generated method stub
-
-			}
-		};
-
 		// User pushes '+', '-', '*', '/' or '=' button.
 		// Perform computation on the previous result and the current input
 		// number,
@@ -210,18 +180,31 @@ public class AddEntryActivity extends ActionBarActivity {
 		private boolean compute(double amount, int category_id) {
 
 			// save the new comment to the database
+			Date now = new Date();
 
-			Entry entry = entrysource.createEntry(amount, category_id);
+			Entry entry = entrysource.createEntry(amount, category_id,
+					(int) now.getTime());
 
 			// if marked true
 			if (locationEnabled) {
-				if (provider != null) {
-					locationManager.requestLocationUpdates(provider, 400L, 1f,
-							locationListener);
+				GPSLocationTracker mGpsLocationTracker = new GPSLocationTracker(
+						AddEntryActivity.this);
+
+				/**
+				 * Set GPS Location fetched address
+				 */
+				if (mGpsLocationTracker.canGetLocation()) {
+					currentlat = mGpsLocationTracker.getLatitude();
+					currentlong = mGpsLocationTracker.getLongitude();
+					locationsource
+							.createLocation(String.valueOf(currentlat),
+									String.valueOf(currentlong), entry.getId());
+
+				} else {
+					
+					mGpsLocationTracker.showSettingsAlert();
 				}
-				com.money_tracker.entities.Location l = locationsource
-						.createLocation(String.valueOf(currentlat),
-								String.valueOf(currentlong), "0", entry.getId());
+				
 			}
 
 			return (entry != null);

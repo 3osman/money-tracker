@@ -13,6 +13,8 @@ public class MoneyTrackerSqlInit extends SQLiteOpenHelper {
 	public static final String COLUMN_CATEGORYID = "category_id";
 	public static final String COLUMN_ENTRYID = "entry_id";
 	public static final String COLUMN_AMOUNT = "amount";
+	public static final String COLUMN_DATE = "date";
+
 	public static final String FIELD_LAT = "lat";
 
 	public static final String FIELD_LNG = "lng";
@@ -33,7 +35,8 @@ public class MoneyTrackerSqlInit extends SQLiteOpenHelper {
 	private static final String ENTRIES_CREATE = "create table "
 			+ TABLE_ENTRIES + "(" + COLUMN_ID
 			+ " integer primary key autoincrement, " + COLUMN_AMOUNT
-			+ " REAL not null, " + COLUMN_CATEGORYID
+			+ " REAL not null, " + COLUMN_DATE + " integer not null, "
+			+ COLUMN_CATEGORYID
 			+ " int not null REFERENCES categories(_id) on UPDATE CASCADE);";
 
 	private static final String LOCATIONS_CREATE = "create table "

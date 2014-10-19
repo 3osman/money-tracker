@@ -5,6 +5,14 @@ public class Entry {
 	private long categoryId;
 	private double amount;
 	
+	private int date;
+	public int getDate() {
+		return date;
+	}
+
+	public void setDate(int date) {
+		this.date = date;
+	}
 
 	public long getId() {
 		return id;
