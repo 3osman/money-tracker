@@ -18,14 +18,14 @@ public class TabBarActivity extends TabActivity {
 
 		// Chart Tab
 		Intent intentAndroid = new Intent().setClass(this, ChartActivity.class);
-		TabSpec tabSpecAndroid = tabHost.newTabSpec("Chartin")
-				.setIndicator("In")
+		TabSpec tabSpecAndroid = tabHost.newTabSpec("Chartout")
+				.setIndicator("Out")
 				.setContent(intentAndroid);
 
 		// chart Tab
 		Intent intentApple = new Intent().setClass(this, ChartActivity2.class);
-		TabSpec tabSpecApple = tabHost.newTabSpec("Chartout")
-				.setIndicator("Out")
+		TabSpec tabSpecApple = tabHost.newTabSpec("Chartin")
+				.setIndicator("In")
 				.setContent(intentApple);
 
 		// Date Tab
@@ -41,8 +41,8 @@ public class TabBarActivity extends TabActivity {
 				.setContent(intentMaps);
 
 		// add all tabs
-		tabHost.addTab(tabSpecAndroid);
 		tabHost.addTab(tabSpecApple);
+		tabHost.addTab(tabSpecAndroid);
 		tabHost.addTab(tabSpecDate);
 		tabHost.addTab(tabSpecMap);
 

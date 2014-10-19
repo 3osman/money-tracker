@@ -144,22 +144,51 @@ public class AddEntryActivity extends ActionBarActivity {
 
 			// Operator buttons: '+', '-', '*', '/' and '='
 			case R.id.btnAddId:
-				boolean added = compute(
-						Double.parseDouble(txtResult.getText().toString()),
-						value);
-				if (added) {
-					Toast.makeText(AddEntryActivity.this, "Entry Added",
-							Toast.LENGTH_SHORT).show();
-					Intent i = new Intent(getBaseContext(), MainActivity.class);
-					i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
-							| Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
-					startActivity(i);
+				if (locationEnabled) {
+
+					GPSLocationTracker mGpsLocationTracker = new GPSLocationTracker(
+							AddEntryActivity.this);
+					if (mGpsLocationTracker.canGetLocation()) {
+						// if marked true
+						Entry added = compute(Double.parseDouble(txtResult
+								.getText().toString()), value);
+						/**
+						 * Set GPS Location fetched address
+						 */
+
+						currentlat = mGpsLocationTracker.getLatitude();
+						currentlong = mGpsLocationTracker.getLongitude();
+						locationsource.createLocation(
+								String.valueOf(currentlat),
+								String.valueOf(currentlong), added.getId());
+						if (added != null) {
+							Toast.makeText(AddEntryActivity.this,
+									"Entry Added", Toast.LENGTH_SHORT).show();
+							Intent i = new Intent(getBaseContext(),
+									MainActivity.class);
+							i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+									| Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+							startActivity(i);
+						} else {
+							Toast.makeText(AddEntryActivity.this,
+									"Entry couldn't be added, try again",
+									Toast.LENGTH_SHORT).show();
+						}
+
+					}
+
+					else {
+						mGpsLocationTracker.showSettingsAlert();
+					}
 				} else {
-					Toast.makeText(AddEntryActivity.this,
-							"Entry couldn't be added, try again",
-							Toast.LENGTH_SHORT).show();
+					Entry added = compute(
+							Double.parseDouble(txtResult.getText().toString()),
+							value);
+
 				}
+
 				lastOperator = '+';
 
 				break;
@@ -177,37 +206,15 @@ public class AddEntryActivity extends ActionBarActivity {
 		// Perform computation on the previous result and the current input
 		// number,
 		// based on the previous operator.
-		private boolean compute(double amount, int category_id) {
+		private Entry compute(double amount, int category_id) {
 
 			// save the new comment to the database
 			Date now = new Date();
-			
+
 			Entry entry = entrysource.createEntry(amount, category_id,
 					String.valueOf(now.getTime()));
 
-			// if marked true
-			if (locationEnabled) {
-				GPSLocationTracker mGpsLocationTracker = new GPSLocationTracker(
-						AddEntryActivity.this);
-
-				/**
-				 * Set GPS Location fetched address
-				 */
-				if (mGpsLocationTracker.canGetLocation()) {
-					currentlat = mGpsLocationTracker.getLatitude();
-					currentlong = mGpsLocationTracker.getLongitude();
-					locationsource
-							.createLocation(String.valueOf(currentlat),
-									String.valueOf(currentlong), entry.getId());
-
-				} else {
-					
-					mGpsLocationTracker.showSettingsAlert();
-				}
-				
-			}
-
-			return (entry != null);
+			return (entry);
 
 		}
 	}
