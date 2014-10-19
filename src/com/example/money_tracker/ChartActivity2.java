@@ -29,6 +29,8 @@ public class ChartActivity2 extends ActionBarActivity {
 		setContentView(R.layout.activity_chart_activity2);
 
 		PieChart chart = (PieChart) findViewById(R.id.chart2);
+        chart.setUsePercentValues(true);
+
 
 		datasource = new CategoryDao(this);
 		datasource.open();
@@ -40,13 +42,17 @@ public class ChartActivity2 extends ActionBarActivity {
 		total = datasource.getCategorySum(0) + datasource.getCategorySum(1);
 
 		amount = datasource.getCategorySum(0);
-		percentage = (float) ((amount * 100) / total);
-		Entry c1e1 = new Entry(percentage, 0); // 0 == quarter 1
-		yVals1.add(c1e1);
+		if (amount != 0.0) {
+			percentage = (float) ((amount * 100) / total);
+			Entry c1e1 = new Entry(percentage, 0); // 0 == quarter 1
+			yVals1.add(c1e1);
+		}
 		amount = datasource.getCategorySum(1);
-		percentage = (float) ((amount * 100) / total);
-		Entry c1e2 = new Entry(percentage, 1); // 1 == quarter 2 ...
-		yVals1.add(c1e2);
+		if (amount != 0.0) {
+			percentage = (float) ((amount * 100) / total);
+			Entry c1e2 = new Entry(percentage, 1); // 1 == quarter 2 ...
+			yVals1.add(c1e2);
+		}
 
 		ArrayList<String> xVals = new ArrayList<String>();
 		xVals.add("Income");

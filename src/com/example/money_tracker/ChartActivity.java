@@ -31,46 +31,65 @@ public class ChartActivity extends ActionBarActivity {
 		setContentView(R.layout.activity_chart);
 
 		PieChart chart = (PieChart) findViewById(R.id.chart);
+        chart.setUsePercentValues(true);
 
 		datasource = new CategoryDao(this);
 		datasource.open();
 		entrysource = new EntryDao(this);
 		entrysource.open();
-		
-		
-		total = datasource.getCategorySum(2) + datasource.getCategorySum(3) + datasource.getCategorySum(4) +datasource.getCategorySum(5) + datasource.getCategorySum(6) + datasource.getCategorySum(7)+ datasource.getCategorySum(8); 
-				
+
+		total = datasource.getCategorySum(2) + datasource.getCategorySum(3)
+				+ datasource.getCategorySum(4) + datasource.getCategorySum(5)
+				+ datasource.getCategorySum(6) + datasource.getCategorySum(7)
+				+ datasource.getCategorySum(8);
+
 		ArrayList<Entry> yVals1 = new ArrayList<Entry>();
 
 		amount = datasource.getCategorySum(2);
-		percentage = (float) ((amount * 100) / total );
-		Entry c1e1 = new Entry(percentage, 0); // 0 == quarter 1
-		yVals1.add(c1e1);
-		amount = datasource.getCategorySum(3);
-		percentage = (float) ((amount * 100) / total );
-		Entry c1e2 = new Entry(percentage, 1); // 1 == quarter 2 ...
-		yVals1.add(c1e2);
-		amount = datasource.getCategorySum(4);
-		percentage = (float) ((amount * 100) / total );
-		Entry c1e3 = new Entry(percentage, 1); // 1 == quarter 2 ...
-		yVals1.add(c1e3);
-		amount = datasource.getCategorySum(5);
-		percentage = (float) ((amount * 100) / total);
-		Entry c1e4 = new Entry(percentage, 1); // 1 == quarter 2 ...
-		yVals1.add(c1e4);
-		amount = datasource.getCategorySum(6);
-		percentage = (float) ((amount * 100) / total );
-		Entry c1e5 = new Entry(percentage, 1); // 1 == quarter 2 ...
-		yVals1.add(c1e5);
-		amount = datasource.getCategorySum(7);
-		percentage = (float) ((amount * 100) / total);
-		Entry c1e6 = new Entry(percentage, 1); // 1 == quarter 2 ...
-		yVals1.add(c1e6);
-		amount = datasource.getCategorySum(8);
-		percentage = (float) ((amount * 100) / total);
-		Entry c1e7 = new Entry(percentage, 1); // 1 == quarter 2 ...
-		yVals1.add(c1e7);
+		if (amount != 0.0) {
+			percentage = (float) ((amount * 100) / total);
 
+			Entry c1e1 = new Entry(percentage, 0); // 0 == quarter 1
+			yVals1.add(c1e1);
+		}
+
+		amount = datasource.getCategorySum(3);
+
+		if (amount != 0.0) {
+			percentage = (float) ((amount * 100) / total);
+			Entry c1e2 = new Entry(percentage, 1); // 1 == quarter 2 ...
+			yVals1.add(c1e2);
+		}
+		amount = datasource.getCategorySum(4);
+		if (amount != 0.0) {
+			percentage = (float) ((amount * 100) / total);
+			Entry c1e3 = new Entry(percentage, 1); // 1 == quarter 2 ...
+			yVals1.add(c1e3);
+		}
+		amount = datasource.getCategorySum(5);
+		if (amount != 0.0) {
+			percentage = (float) ((amount * 100) / total);
+			Entry c1e4 = new Entry(percentage, 1); // 1 == quarter 2 ...
+			yVals1.add(c1e4);
+		}
+		amount = datasource.getCategorySum(6);
+		if (amount != 0.0) {
+			percentage = (float) ((amount * 100) / total);
+			Entry c1e5 = new Entry(percentage, 1); // 1 == quarter 2 ...
+			yVals1.add(c1e5);
+		}
+		amount = datasource.getCategorySum(7);
+		if (amount != 0.0) {
+			percentage = (float) ((amount * 100) / total);
+			Entry c1e6 = new Entry(percentage, 1); // 1 == quarter 2 ...
+			yVals1.add(c1e6);
+		}
+		amount = datasource.getCategorySum(8);
+		if (amount != 0.0) {
+			percentage = (float) ((amount * 100) / total);
+			Entry c1e7 = new Entry(percentage, 1); // 1 == quarter 2 ...
+			yVals1.add(c1e7);
+		}
 		ArrayList<String> xVals = new ArrayList<String>();
 		xVals.add("Food");
 		xVals.add("Home");
