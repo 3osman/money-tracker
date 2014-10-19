@@ -47,7 +47,7 @@ public class ShowMap extends FragmentActivity {
 			mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(ll, 15));
 		}
 		for (Location l : locationsource.getAllLocations()) {
-			if (l.getEntryId() < 2) {
+			if (entrysource.getCategoryIdByEntryId(l.getEntryId()) < 2) {
 				mMap.addMarker(new MarkerOptions()
 						.position(
 								new LatLng(Double.parseDouble(l.getLat()),

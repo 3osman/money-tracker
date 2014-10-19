@@ -16,8 +16,7 @@ public class EntryDao {
 	private MoneyTrackerSqlInit dbHelper;
 	private String[] allColumns = { MoneyTrackerSqlInit.COLUMN_ID,
 			MoneyTrackerSqlInit.COLUMN_CATEGORYID,
-			MoneyTrackerSqlInit.COLUMN_AMOUNT, 
-			MoneyTrackerSqlInit.COLUMN_DATE };
+			MoneyTrackerSqlInit.COLUMN_AMOUNT, MoneyTrackerSqlInit.COLUMN_DATE };
 
 	public EntryDao(Context context) {
 		dbHelper = new MoneyTrackerSqlInit(context);
@@ -48,19 +47,19 @@ public class EntryDao {
 		return newEntry;
 	}
 
-	public String getValfromId(long id){
-		Cursor cursor = database
-				.rawQuery("SELECT amount FROM entries where _id = " + id
-						+ ";", null);
+	public String getValfromId(long id) {
+		Cursor cursor = database.rawQuery(
+				"SELECT amount FROM entries where _id = " + id + ";", null);
 		if (cursor.moveToFirst()) {
 			return String.valueOf(cursor.getDouble(0));
 		} else {
 			return "";
 		}
 	}
+
 	public String getCategoryById(long id) {
 		int cat_id = -1;
-		
+
 		Cursor cursor = database
 				.rawQuery("SELECT category_id FROM entries where _id = " + id
 						+ ";", null);
@@ -69,10 +68,10 @@ public class EntryDao {
 		} else {
 			cat_id = -1;
 		}
-		switch(cat_id){
+		switch (cat_id) {
 		case 0:
 			return "Salary";
-			
+
 		case 1:
 			return "Other-In";
 		case 2:
@@ -95,6 +94,18 @@ public class EntryDao {
 		return "";
 	}
 
+	public long getCategoryIdByEntryId(long id) {
+
+		Cursor cursor = database
+				.rawQuery("SELECT category_id FROM entries where _id = " + id
+						+ ";", null);
+		if (cursor.moveToFirst()) {
+			return cursor.getLong(0);
+		} else {
+			return -1;
+		}
+	}
+
 	public void deleteEntry(Entry entry) {
 		long id = entry.getId();
 		System.out.println("Entry deleted with id: " + id);
@@ -106,7 +117,8 @@ public class EntryDao {
 		List<Entry> entries = new ArrayList<Entry>();
 
 		Cursor cursor = database.query(MoneyTrackerSqlInit.TABLE_ENTRIES,
-				allColumns, null, null, null, null, MoneyTrackerSqlInit.COLUMN_DATE+" DESC");
+				allColumns, null, null, null, null,
+				MoneyTrackerSqlInit.COLUMN_DATE + " DESC");
 
 		cursor.moveToFirst();
 		while (!cursor.isAfterLast()) {
