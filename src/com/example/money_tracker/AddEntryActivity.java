@@ -186,6 +186,20 @@ public class AddEntryActivity extends ActionBarActivity {
 					Entry added = compute(
 							Double.parseDouble(txtResult.getText().toString()),
 							value);
+					if (added != null) {
+						Toast.makeText(AddEntryActivity.this,
+								"Entry Added", Toast.LENGTH_SHORT).show();
+						Intent i = new Intent(getBaseContext(),
+								MainActivity.class);
+						i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+								| Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+						startActivity(i);
+					} else {
+						Toast.makeText(AddEntryActivity.this,
+								"Entry couldn't be added, try again",
+								Toast.LENGTH_SHORT).show();
+					}
 
 				}
 
